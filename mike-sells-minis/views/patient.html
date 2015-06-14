@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- Angular -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+		
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+		<!-- Bootstrap -->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+		<style type="text/css">
+			body { 
+ 			   padding-top: 65px; 
+			}
+		</style>
+
+		<script type="text/javascript" >
+			var app = angular.module('patient_visualizer', []);
+
+			app.controller('visualizer', ['$scope', '$http', function($scope, $http){
+
+				$scope.patient = {
+					name: 'Doe, John',
+					medical_record_number: 'UN000000000',
+					birthdate: '01/01/2015',
+					ethnicity: 'Caucasian'
+				};
+
+			}]);
+		</script>
+
+	</head>
+
+	<body ng-app="patient_visualizer">
+		<div ng-controller="visualizer" class="container">
+			<table class="table table-striped">
+				<tr>
+					<td>Name</td><td>{{patient.name}}</td>
+					<td>Unit number</td><td>{{patient.medical_record_number}}</td>
+				</tr>
+				<tr>
+					<td>Birthdate</td><td>{{patient.birthdate}}</td>
+					<td>Ethnicity</td><td>{{patient.ethnicity}}</td>
+				</tr>
+			</table>
+
+			<div role="tabpanel">
+
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#rateMeasureResults" aria-controls="rateMeasureResults" role="tab" data-toggle="tab">Rate Measure Results</a></li>
+					<li role="presentation"><a href="#encounters" aria-controls="encounters" role="tab" data-toggle="tab">Encounters</a></li>
+					<li role="presentation"><a href="#conditions" aria-controls="conditions" role="tab" data-toggle="tab">Conditions</a></li>
+					<li role="presentation"><a href="#labTests" aria-controls="labTests" role="tab" data-toggle="tab">Lab Tests</a></li>
+					
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="rateMeasureResults">
+					</div>
+
+					<div class="tab-pane" id="encounters">
+					</div>
+
+					<div class="tab-pane" id="conditions">
+					</div>				
+
+					<div class="tab-pane" id="labTests">
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

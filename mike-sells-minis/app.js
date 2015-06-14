@@ -5,8 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose');
+
+require('./models/Offers.js');
+
+mongoose.connect('mongodb://localhost/msm');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
 
 var app = express();
 
